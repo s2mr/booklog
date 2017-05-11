@@ -5,6 +5,7 @@ class BooksController < ApplicationController
   # GET /books.json
   def index
     @books = Book.all
+    # @count = Review.find_by(:book => @book)
   end
 
   # GET /books/1
