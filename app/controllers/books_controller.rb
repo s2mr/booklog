@@ -10,7 +10,7 @@ class BooksController < ApplicationController
   # GET /books/1
   # GET /books/1.json
   def show
-    @reviews = Review.where(book: @book).order("created_at desc")
+    @reviews = Review.where(book: @book).order("created_at desc").page(params[:page]).per(2)
   end
 
   # GET /books/new
