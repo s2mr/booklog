@@ -27,7 +27,7 @@
 <hr>
 
 <h2>レビュー一覧</h2>
-<% @book.reviews.each do |review| %>
+<% @reviews.each do |review| %>
   <p>
     <%= review.body %> <br>
     by <%= review.user.email %>  <%= review.created_at.strftime("%Y-%m-%d %H:%m")%>
@@ -36,8 +36,8 @@
 <hr>
 <h2>レビューを残したユーザー一覧</h2>
 <%# throughオプションのおかげで、BookはReviewを介してUserにアクセスできる  %>
-<% @book.users.each do |user| %>
-  <p><%= user.email %></p>
+<% @reviews.each do |review| %>
+  <p><%= review.user.email %></p>
 <% end %>
 </div>
 </div>

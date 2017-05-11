@@ -5,12 +5,12 @@ class BooksController < ApplicationController
   # GET /books.json
   def index
     @books = Book.all
-    # @count = Review.find_by(:book => @book)
   end
 
   # GET /books/1
   # GET /books/1.json
   def show
+    @reviews = Review.where(book: @book).order("created_at desc")
   end
 
   # GET /books/new
