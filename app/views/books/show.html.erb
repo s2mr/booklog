@@ -33,7 +33,7 @@
     by <%= review.user.email %>  <%= review.created_at.strftime("%Y-%m-%d %H:%m")%>
   </p>
 <% end %>
-<%= paginate(@reviews) %>
+<%= paginate @reviews%>
 <hr>
 <h2>レビューを残したユーザー一覧</h2>
 <%# throughオプションのおかげで、BookはReviewを介してUserにアクセスできる  %>
