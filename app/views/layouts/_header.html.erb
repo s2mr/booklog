@@ -12,6 +12,10 @@
 
     <div class="collapse navbar-collapse" id="navbar-collapse-menu">
       <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "本を作成", new_book_path%></li>
+        <% if current_page?(@book) %>
+          <li><%= link_to "レビューを作成", new_book_review_path(params[:id]) %></li>
+        <% end %>
         <% if user_signed_in? %>
           <li><%= link_to "設定変更", edit_user_registration_path %></li>
           <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
